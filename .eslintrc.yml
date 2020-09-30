@@ -1,0 +1,30 @@
+extends:
+  - standard
+  - plugin:flowtype/recommended
+parser: babel-eslint
+plugins:
+  - mocha
+  - chai-expect
+  - flowtype
+rules:
+  max-len: [ 2, 120, 2, { ignoreUrls: true, ignorePattern: '\s+it\(' } ]
+  mocha/no-async-describe: warn
+  mocha/no-global-tests: error
+  mocha/no-setup-in-describe: error
+  mocha/no-synchronous-tests: warn
+  mocha/no-exclusive-tests: warn
+  mocha/valid-suite-description:
+    - warn
+    - ^[A-Z]
+  mocha/no-pending-tests: warn
+  chai-expect/missing-assertion: warn
+  chai-expect/no-inner-compare: error
+  chai-expect/terminating-properties:
+    - warn
+    - properties:
+      - headers
+      - html
+      - ip
+      - json
+      - redirect
+      - test

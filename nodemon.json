@@ -1,0 +1,7 @@
+{
+  "verbose": true,
+  "ignore": ["docs/**", "playground/**", "build/**", "node_modules/**"],
+  "watch": [
+    "src"
+  ]
+}

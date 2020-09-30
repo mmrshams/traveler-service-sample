@@ -1,0 +1,17 @@
+version: "3"
+services:
+  traveler.travelers:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    networks:
+      - tipi
+    env_file:
+      - config.development
+    ports:
+      - "3003:3000"
+    volumes:
+      - ./:/usr/service
+networks:
+  tipi:
+    external: true

@@ -1,0 +1,49 @@
+{
+  "index_patterns": ["[env]_travelers"],
+  "settings": {
+    "number_of_shards": 1
+  },
+  "mappings": {
+    "_source": {
+      "enabled": true
+    },
+    "properties": {
+      "id": {
+        "type": "keyword"
+      },
+      "gender": {
+        "type": "keyword"
+      },
+      "channel": {
+        "type": "keyword"
+      },
+      "device": {
+        "type": "keyword"
+      },
+      "lastLocation": {
+        "type": "geo_point"
+      },
+      "dob": {
+        "type": "date"
+      },
+      "lastLogin": {
+        "type": "date"
+      },
+      "state": {
+        "type": "keyword"
+      },
+      "health": {
+        "type": "keyword"
+      },
+      "invisible": {
+        "type": "boolean"
+      },
+      "createdAt": {
+        "type": "date"
+      },
+      "updatedAt": {
+        "type": "date"
+      }
+    }
+  }
+}

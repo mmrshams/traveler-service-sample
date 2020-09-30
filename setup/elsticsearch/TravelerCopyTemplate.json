@@ -1,0 +1,47 @@
+{
+  "index_patterns": ["[env]_traveler_copies"],
+  "settings": {
+    "number_of_shards": 1,
+    "analysis": {
+      "analyzer": {
+        "email_analyzer": {
+          "type": "custom",
+          "tokenizer": "uax_url_email"
+        }
+      }
+    }
+  },
+  "mappings": {
+    "_source": {
+      "enabled": true
+    },
+    "properties": {
+      "id": {
+        "type": "keyword"
+      },
+      "travelerId": {
+        "type": "keyword"
+      },
+      "email": {
+        "type": "text",
+        "analyzer": "email_analyzer",
+        "search_analyzer": "email_analyzer"
+      },
+      "gender": {
+        "type": "keyword"
+      },
+      "dob": {
+        "type": "date"
+      },
+      "ownerId": {
+        "type": "keyword"
+      },
+      "createdAt": {
+        "type": "date"
+      },
+      "updatedAt": {
+        "type": "date"
+      }
+    }
+  }
+}

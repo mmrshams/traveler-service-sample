@@ -1,0 +1,17 @@
+version: "3"
+services:
+ traveler.travelers:
+   build:
+     context: .
+     dockerfile: Dockerfile.mac
+   networks:
+     - tipi
+   env_file:
+     - config.development
+   ports:
+     - "3003:3000"
+   volumes:
+     - ./:/usr/service:delegated
+networks:
+ tipi:
+   external: true

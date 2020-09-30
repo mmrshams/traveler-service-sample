@@ -1,0 +1,31 @@
+version: "3"
+services:
+  traveler.travelers:
+    build:
+      context: .
+      dockerfile: Dockerfile.test-component
+    networks:
+      - tipi
+    env_file:
+      - config.test-component
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./:/usr/service
+    depends_on:
+      - lab  
+  lab:
+    build:
+      context: .
+      dockerfile: Dockerfile.lab
+    networks:
+      - tipi
+    env_file:
+      - config.test-component
+    ports:
+      - "8998:8998"
+    volumes:
+      - ./:/usr/service
+networks:
+  tipi:
+    external: true

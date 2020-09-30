@@ -1,0 +1,10 @@
+FROM node:12.16.3
+
+RUN apt-get update && apt-get install -y wget openssl
+
+WORKDIR /usr/service
+
+RUN apt-get install -y ocaml libelf-dev make gcc g++ python \
+  --no-install-recommends && rm -r /var/lib/apt/lists/*
+
+CMD npm run start:test:component

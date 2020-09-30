@@ -1,0 +1,11 @@
+stages:
+  - Node_install-build-release
+  - Docker_build-tag-push
+  - GCloud_deploy
+include:
+  - project: 'yooki/yooki-deployment/gitlab-ci'
+    file: '/Node_install-build-release.yaml'
+  - project: 'yooki/yooki-deployment/gitlab-ci'
+    file: '/Docker_build-tag-push.yaml'
+  - project: 'yooki/yooki-deployment/gitlab-ci'
+    file: '/GCloud_deploy.yaml'
